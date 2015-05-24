@@ -598,45 +598,35 @@ Por último, se ilustran dos casos de estudio de este tipo de redes en donde el 
 \section{Características de una red M2M y su Tráfico}
 \section{Plataformas M2M en la Actualidad}
 \section{Plataforma de Servicio M2M: M2SP}
+
+Una vez identificadas las características de las plataformas M2M en la actualidad, se vio anteriormente cómo una plataforma integrada de servicio para estas redes debe cumplir con ciertas características. Esta plataforma de servicio, denominada M2SP, reune las características requeridas mediante la arquitectura mostrada en la figura \ref{arqM2SP}, tomada de \cite{paper1} 
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.25]{arquitecturaM2SP.png}}
+\caption{Arquitectura de la plataforma M2SP}
+\label{arqM2SP}
+\end{figure}
+
+La plataforma está compuesta por tres tipos de redes: un conjunto de redes M2M, una red de acceso y una red central (core). Las redes M2M son generadas por la interconección de dispositivos bajo sus medios de comunicación; luego, un nodo central recopila información de las redes y se conecta a la red central mediante una red de acceso.\\
+
+En este punto, la red central recibe una enorme cantidad de tráfico con características diferentes, por lo tanto, debe ser capáz de garantizar una buena calidad de servicio a pesar de este tráfico denso y variado.\\
+
+Los usuarios y objetos conectados a la red central pueden acceder a servicios que ofrece la plataforma M2SP, la cual se constituye de 4 entidades.\\
+
+\subsubsection{Plataforma de Dispositivo (Device Platform)}
+
 \section{Tecnologías y Estandarización}
+
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
+
+Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.
+
 \section{Caso de estudio: Modelamiento de Fuentes de tráfico (CMMPP)}
 El modelamiento de las fuentes de tráfico es muy importante para dimensionar los requerimientos de la red. 
 \section{Conclusiones}
 
 
-
-%
-%\underline{Costos reducidos:}
-%
-%\begin{center}
-%\resizebox{6.3cm}{!}{\begin{tabular}{c | c  c  c  c | c }
-%& & & & & \bf p\\
-%\hline
-%&\textcolor{teal}{0}&3&9& 12 &96 \\
-%&7&\textcolor{teal}{0}&-2&-13&109\\
-%&7&-11&\textcolor{teal}{0}&-2&113\\
-%&-1&-10&3&\textcolor{teal}{0}&115\\
-%\hline
-%\bf q & 0& 0& 0& 0 &
-%\end{tabular}}
-%\end{center}
-
-%\begin{center}
-%\resizebox{7.3cm}{!}{\begin{tabular}{p{2cm}| c | c | c | c | c }
-%&\bf 20&\bf 21&\bf 22&\bf 23&\\
-%\hline
-%Nelly&1& & & &\bf 1\\
-%\hline
-%Jenny& &1&  &  &\bf 1\\
-%\hline
-%Martha& & & 1 &&\bf 1\\
-%\hline
-%Ángela& & &  &1&\bf 1\\
-%\hline
-%&\bf 1&\bf 1&\bf 1&\bf 1&
-%\end{tabular}}
-%\end{center}
 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
@@ -702,7 +692,7 @@ The authors would like to thank...
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEE:luenberger}
+\bibitem{paper1}
 J. ~Kim, J. ~Lee, J. ~Kim, J. ~Yun  \emph{Linear and Nonlinear Programming}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008.
   
 \bibitem{IEEEhowto:tut}
