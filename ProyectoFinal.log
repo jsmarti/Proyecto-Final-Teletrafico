@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 MAY 2015 14:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 MAY 2015 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -560,17 +560,56 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+[]\OT1/ptm/m/n/10 As re-des Machine-to-Machine de-finen re-des de
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 495--496
+[]\OT1/ptm/m/n/10 Gracias a esta gran di-ver-si-dad, re-sulta in-ter-sante la
+ []
+
+
+Underfull \hbox (badness 4060) in paragraph at lines 495--496
+\OT1/ptm/m/n/10 re-al-izaci[]on de un es-tu-dio so-bre la nat-u-raleza de las
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 495--496
+\OT1/ptm/m/n/10 car-ac-ter[]^^Psticas y re-quer-im-ien-tos. Bajo es-tos cri-te-
+rios, es
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
+
+ []
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 (./ProyectoFinal.aux) ) 
 Here is how much of TeX's memory you used:
- 4858 strings out of 493117
- 72190 string characters out of 6135433
- 133418 words of memory out of 5000000
- 8267 multiletter control sequences out of 15000+600000
+ 4859 strings out of 493117
+ 72198 string characters out of 6135433
+ 136418 words of memory out of 5000000
+ 8268 multiletter control sequences out of 15000+600000
  36230 words of font info for 66 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,6n,38p,494b,180s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -579,7 +618,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ProyectoFinal.pdf (1 page, 50919 bytes).
+Output written on ProyectoFinal.pdf (1 page, 52931 bytes).
 PDF statistics:
  25 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream
