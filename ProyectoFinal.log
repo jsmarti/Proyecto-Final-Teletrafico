@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.3)  24 MAY 2015 13:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.3)  24 MAY 2015 17:37
 entering extended mode
 **ProyectoFinal.tex
 
@@ -415,6 +415,14 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count95
+\float@exts=\toks23
+\float@box=\box27
+\@float@everytoks=\toks24
+\@floatcapt=\box28
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -442,7 +450,7 @@ Package: amstext 2000/06/29 v2.01
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks23
+\@emptytoks=\toks25
 \ex@=\dimen128
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
@@ -452,96 +460,191 @@ Package: amsbsy 1999/11/29 v1.2d
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count95
+\inf@bad=\count96
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count96
-\leftroot@=\count97
+\uproot@=\count97
+\leftroot@=\count98
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count98
-\DOTSCASE@=\count99
+\classnum@=\count99
+\DOTSCASE@=\count100
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
+\Mathstrutbox@=\box29
+\strutbox@=\box30
 \big@size=\dimen130
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count100
-\c@MaxMatrixCols=\count101
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
 \dotsspace@=\muskip10
-\c@parentequation=\count102
-\dspbrk@lvl=\count103
-\tag@help=\toks24
-\row@=\count104
-\column@=\count105
-\maxfields@=\count106
-\andhelp@=\toks25
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks26
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks27
 \eqnshift@=\dimen131
 \alignsep@=\dimen132
 \tagshift@=\dimen133
 \tagwidth@=\dimen134
 \totwidth@=\dimen135
 \lineht@=\dimen136
-\@envbody=\toks26
+\@envbody=\toks28
 \multlinegap=\skip48
 \multlinetaggap=\skip49
-\mathdisplay@stack=\toks27
+\mathdisplay@stack=\toks29
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (C:\Users\Andrés\Documents\GitHub\Proyecto-Final-Teletrafico\ProyectoFinal.aux
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 377.
-LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
+\scratchcounter=\count108
 \scratchdimen=\dimen137
-\scratchbox=\box29
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count110
+\scratchbox=\box31
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count111
 \MPscratchDim=\dimen138
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks29
-) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks31
+)
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
+
+ []
 
 
+Underfull \hbox (badness 6268) in paragraph at lines 599--600
+\OT1/ptm/m/n/10 difer-entes. La primera de el-las con-siste en mod-e-lar
+ []
 
-]
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 605.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 605.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<graf1.png, id=1, 174.05025pt x 119.2455pt>
+File: graf1.png Graphic file (type png)
+ <use graf1.png>
+Package pdftex.def Info: graf1.png used on input line 608.
+(pdftex.def)             Requested size: 147.94339pt x 101.35913pt.
+
+<graf2.png, id=3, 174.6525pt x 121.05225pt>
+File: graf2.png Graphic file (type png)
+ <use graf2.png>
+Package pdftex.def Info: graf2.png used on input line 615.
+(pdftex.def)             Requested size: 148.45532pt x 102.89488pt.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <C:/Users/Andrés/Documents/GitHub/Proyecto-Final-Teletrafico/graf1.png> <C:/U
+sers/Andrés/Documents/GitHub/Proyecto-Final-Teletrafico/graf2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--639
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
+
+ []
+
+<graf3.png, id=19, 346.29375pt x 158.994pt>
+File: graf3.png Graphic file (type png)
+ <use graf3.png>
+Package pdftex.def Info: graf3.png used on input line 652.
+(pdftex.def)             Requested size: 242.40396pt x 111.29503pt.
+
+<graf4.png, id=20, 346.896pt x 160.80075pt>
+File: graf4.png Graphic file (type png)
+ <use graf4.png>
+Package pdftex.def Info: graf4.png used on input line 661.
+(pdftex.def)             Requested size: 242.82553pt x 112.55974pt.
+
+Underfull \hbox (badness 2556) in paragraph at lines 669--670
+[]\OT1/ptm/m/n/10 Adicionalmente, en el art[]culo se ll-eva a cabo una
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
+
+ []
+
+[2 <C:/Users/Andrés/Documents/GitHub/Proyecto-Final-Teletrafico/graf3.png> <C:
+/Users/Andrés/Documents/GitHub/Proyecto-Final-Teletrafico/graf4.png>]
+<graf5.png, id=30, 234.8775pt x 143.3355pt>
+File: graf5.png Graphic file (type png)
+ <use graf5.png>
+Package pdftex.def Info: graf5.png used on input line 675.
+(pdftex.def)             Requested size: 199.6468pt x 121.83572pt.
+ [3
+
+ <C:/Users/Andrés/Documents/GitHub/Proyecto-Final-Teletrafico/graf5.png>]
 (C:\Users\Andrés\Documents\GitHub\Proyecto-Final-Teletrafico\ProyectoFinal.aux
 ) ) 
 Here is how much of TeX's memory you used:
- 4500 strings out of 493921
- 65972 string characters out of 3144871
- 123659 words of memory out of 3000000
- 7771 multiletter control sequences out of 15000+200000
- 36230 words of font info for 66 fonts, out of 3000000 for 9000
+ 4621 strings out of 493921
+ 67612 string characters out of 3144871
+ 131026 words of memory out of 3000000
+ 7864 multiletter control sequences out of 15000+200000
+ 41070 words of font info for 79 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 41i,6n,38p,494b,182s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,38p,738b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on ProyectoFinal.pdf (1 page, 54154 bytes).
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/time
+s/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
+fb>
+Output written on ProyectoFinal.pdf (3 pages, 283338 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
