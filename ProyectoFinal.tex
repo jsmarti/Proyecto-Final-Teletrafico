@@ -85,7 +85,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage[table]{xcolor}
-\usepackage{float}
 %\usepackage[autolinebreaks,framed]{mcode} %matlab code
 %\lstset{breakatwhitespace=false}
 %
@@ -645,97 +644,11 @@ La implementación de una plataforma de integración como la anteriormente expue
 Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Pee-to-Peer, y actividades de estandarización.
 
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
-<<<<<<< HEAD
-\section{Caso de estudio: Modelamiento de Fuentes de tráfico}
-El modelamiento de las fuentes de tráfico es muy importante para dimensionar los requerimientos de la red. Para el caso de las redes M2M, es necesario obtener modelos definidos adecuamente para asi poder conocer los requerimientos a futuro. debido a que se prevé un gran aumento en el número de dispositivos conectados.\\
-
-Para realizar este tipo de modelos existen dos metodologías diferentes. La primera de ellas consiste en modelar simultaneamente el tráfico generado por un gran número de maquinas autónomas por separado. La segunda metodología es la del tráfico agregado, en la cual se acumula el tráfico de todos los dispositivos en un solo flujo.\\
- 
-Según el articulo \cite{art3}, el modelo de tr\'afico agregado que m\'as se asemeja a las redes M2M es el modelo 3GPP. Sin embargo, se propone un modelo m\'as apropiado utilizando un \emph{Coupled Modulated Markov Poisson Process} (CMPP) porque cada dispositivo se representa como una entidad separada y se tiene en cuenta el acoplamiento debido a la sincronizac\'on del tr\'afico. A continuaci\'on se presenta una descripci\'on de cada uno de los modelos y una comparaci\'on entre ambos.
-\subsection{Modelo 3GPP}
-Este modelo resulta ser uno de los m\'as utilizados para representar la generaci\'on de tr\'afico en las redes inal\'ambricas y adicionalmente esta relacionado con el funcionamiento de las redes M2M.\\
-
-El modelo 3GPP consiste de dos escenarios llamados Modelo 1 y Modelo 2. El primero de ellos asume que el tr\'afico no est\'a coordinado y la llegada de paquetes tiene una distribuci\'on $f_{T_1}(t)$ uniforme en el intervalo $[0\hspace{4pt}1]$ y el periodo de tiempo $T_1$ es de 60 segundos. El segundo modelo asume que el tr\'afico es sincronizado y la llegada de paquetes tiene una distribuci\'on beta $f_{T_2}(t)=beta(3,4)$ en el intervalo $[0\hspace{4pt}1]$ y el periodo de tiempo $T_2$ es de 10 segundos. Al reescalar ambos intervalos al intervalo $[0\hspace{4pt}T]$ se obtiene la gr\'afica de la distribuci\'on $f_T(t)$ de la Fig.\ref{3GPP1}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.85]{graf1}
-\caption{Gr\'afica del n\'umero esperado de llegadas del modelo 3GPP}
-\label{3GPP1} 
-\end{figure}
-El modelo 3GPP se puede ver tambi\'en como un Proceso de Poisson Modulado, en donde se modula la tasa de llegada promedio $\lambda(t)$ en cada intervalo de tiempo $\Delta t$ por una distribuci\'on beta. Esto se observa en la Fig.\ref{3GPP2}.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.85]{graf2}
-\caption{Gr\'afica del n\'umero esperado de llegadas del modelo 3GPP}
-\label{3GPP2}
-\end{figure} 
-Este modelo tiene ciertas limitaciones siguientes limitaciones que impiden cumplir los siguientes los requerimientos de las redes M2M:
-\begin{itemize}
-\item Se debe asociar una fuente de datos a un lugar fijo 
-\item Las r\'afagas de tr\'afico deben provenir de la misma maquina
-\item La red influencia los patrones del tr\'afico
-\end{itemize}
-Para resolver estos problemas, los autores proponen el siguiente modelo.
-\subsection{Modelo CMMPP}
-En este modelo cada dispositivo es representado coma una entidad independiente, en donde se define la sincronizaci\'on entre todas. Para ello se propone un proceso de fondo que actue como maestro que pueda modular a cada entidad. Cada uno de los dispositivos se representa como un MMPP por separado de la siguiente manera.\\
-
-El caso b\'asico es un MMPP con dos estados, uno de ellos representando operaci\'on normal y el otro operaci\'on bajo alarma, que significa que la tasa de llegada de paquetes es mayor. Para diferenciar la operaci\'on cuando el tr\'afico es coordinado (C) o no coordinado (U) se utilizan las siguientes matrices de transici\'on.
-$$\mathbf{P}_U=\left[\begin{array}{cc}
-1 & 1\\
-0 & 0
-\end{array}\right]\hspace{20pt}\mathbf{P}_C=\left[\begin{array}{cc}
-0 & 1\\
-1 & 0
-\end{array}\right]
-$$
-Para el caso no coordinado se tiene que nunca se va a pasar al estado de alarma y para el caso coordinado disparar una alarma en un intervalo de tiempo y despu\'es regresar a operaci\'on normal. Adicionalmente se tiene que $\lambda_1<\lambda_2=\frac{1}{\Delta t}$\\
-
-Con las Cadenas de Markov acopladas se tiene que hay multiples cadenas que influyen mutuamente en cada una de las matrices de probabilidad de transi\'on $\mathbf{P}_n(t)$. La matriz de la cadena $n$ se multiplica por un factor $\gamma_{n=i|m=j}(t|t-1)$ que depende de los estados pasados $s_m(t-1)$ de la cadena $m$. Para el proposito del modelo desarrollado se tiene una influencia unidireccional del el proceso maestro $\Theta$ hacia cada proceso MMPP.\\
-
-Para encontrar el par\'ametro de influencia del proceso maestro se tiene que este gener\'a muestras $\theta(t)$ en el intervalo $[0\hspace{4pt}1]$ y cada dispositivo tiene un par\'ametro asociado $\delta_n$ constante con lo que se tiene que:
-$$\theta_n(t)=\delta_n\cdot\theta(t)$$
-A partir dee esto se tiene que la matriz de probabilidad de transici\'on $\mathbf{P}_n(t)$ para el dispositivo $n$ en el tiempo $t$ es:
-$$\mathbf{P}_n(t)=\theta_n(t)\cdot \mathbf{P}_C+(1-\theta_n(t))\mathbf{P}_U$$
-El par\'ametro $\delta_n$ representa la distancia al epicentro y $\theta_n(t)$ es una medida de que tan coordinado es el tr\'afico.
-
-En \cite{art3} se realiza una simulaci\'on del modelo, pero aumentando el n\'umero de estados a 4, en donde los nuevos estados son la fase de \emph{startup} o arranque y el estado de silencio, al cual se pasa si un dispositivo esta en el estado de alarma. La simulaci\'on se realiz\'o para 1000 dispositivos durante 60 segundos y los resultados se muestran a continuaci\'on. Hay que tener en cuenta no se mencionan los cambios en las matrices de transici\'on.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{graf3}
-\caption{Resultados en el estado de inicio (izquierda) y de operaci\'on regular(derecha)}
-\label{CMMPP1}
-\end{figure}
-
-En el estado de inicio cada dispositivo intenta transmitir informaci\'on, por lo cual se tiene una gran cantidad de datos. En el estado de operaci\'on normal hay tr\'afico no coordinado distribuido. Posteriormente hay algunos dispositivos en estado de alarma ubicados principalmente en el centro mientras que hay otros que siguen en el estado normal. Por \'ultimo se tiene que en el estado de silencio se distingue que no se generan datos en la zona donde estaba los dispositivos en alarma. De esta manera se observa la transici\'on entre estados de una forma coordinada temporal y espacialmente.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{graf4}
-\caption{Resultados en el estado alarma (izquierda) y de silencio regular(derecha)}
-\label{CMMPP2}
-\end{figure}
-
-\subsection{Comparaci\'on entre modelos}
-La principal diferencia, como se ha mencionado anteriormente, es que se tiene en cuenta una correlaci\'on espacial y temporal en la generaci\'on del tr\'afico, asi como el modelamiento de cada dispositivo por aparte.
-
-Adicionalmente, en el art\'iculo se lleva a cabo una comparaci\'on en t\'erminos del tiempo requerido para cada simulaci\'on. Para ello se utiliz\'o MatLab para implementar los modelos de 3GPP, 3GPP sequencial (como Proceso de Poisson Modulado) y el CMMPP, teniendo como resultado 0.02 s, 1.1 s y 36 s respectivamente. Adicionalmente se obtuvo una gr\'afica para comparar la duraci\'on de la simulaci\'on a medida que se aumentaba el n\'umero de dispositivos, la cual se muestra en la Fig.\ref{comp}.\\
-
-Se observa que el tiempo de simulaci\'on para ambos modelos 3GPP no aumenta y esto se debe a que son m\'as generales y su complejidad es mucho menor, en la medida que no hay calculos sobre matrices. El modelo de CMMPP tiene un aumento proporcional del tiempo a medida que aumenta los dispositivos, en la medida que hay m\'as cadenas de Markov asociadas pero este resultado es mucho mejor que con otros modelos que tienen en cuenta la coordinaci\'on entre dispositivos independientes.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.85]{graf5}
-\caption{Comparaci\'on del tiempo de simulaci\'on}
-\label{comp}
-\end{figure}
-=======
 
 Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.
 
 \section{Caso de estudio: Modelamiento de Fuentes de tráfico (CMMPP)}
 El modelamiento de las fuentes de tráfico es muy importante para dimensionar los requerimientos de la red. 
->>>>>>> 5637c0847ebfdd2c05b75b4dcd7ba0690191d2ac
 \section{Conclusiones}
 
 
@@ -807,9 +720,9 @@ The authors would like to thank...
 \bibitem{paper1}
 J. ~Kim, J. ~Lee, J. ~Kim, J. ~Yun  \emph{Linear and Nonlinear Programming}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008.
   
-\bibitem{art3}
-M. ~Laner, P. ~Svoboda, N. ~Nikaein and M. ~Rupp. ~'Traffic Models for Machine Type Communications', \emph{Wireless Communication Systems (ISWCS 2013), Proceedings of the Tenth International Symposium on}, pp. 1-5, 2013.
-  
+\bibitem{IEEEhowto:tut}
+  \emph{The Assignment Problem and the Hungarian Method}. \hskip 1em plus
+  0.5em minus 0.4em\relax Consultado el 5 de Octubre de 2014 en:  http://www.math.harvard.edu/archive/
 \end{thebibliography}
 
 \begin{comment}
