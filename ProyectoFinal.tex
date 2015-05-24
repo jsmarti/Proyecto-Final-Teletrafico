@@ -614,7 +614,28 @@ En este punto, la red central recibe una enorme cantidad de tráfico con caracte
 
 Los usuarios y objetos conectados a la red central pueden acceder a servicios que ofrece la plataforma M2SP, la cual se constituye de 4 entidades.\\
 
-\subsubsection{Plataforma de Dispositivo (Device Platform)}
+\subsubsection{Plataforma de Dispositivo (M2M Device Platform)}
+
+
+La plataforma de dispositivos provee acceso a dispositivos registrados a través de la red. Para ello, los dispositivos se registran creando una base de datos con una variedad de información, como tipo de dispositivo, ubicación, descripción, etc.\\
+La plataforma tiene la responsabilidad de registrar, modificar y obtener dispositivos. Además, tiene la funcionalidad de manejo de autentificación, monitoreo y control de dispositivos dependiendo de su estado.\\
+
+\subsubsection{Plataforma de Usuario (M2M User Platform)}
+
+La plataforma de usuario tiene la responsabilidad de manejar perfiles de usuario para ofrecer servicios tales como registro, modificación y consulta de información. La plataforma trabaja en conjunto con la plataforma de dispositivos para garantizar accesos de diferentes tipos hacia los dispositivos en la red.\\
+De esta forma, los proveedores de servicios y dispositivos tiene privilegios de administrador sobre sus dispositivos y redes de los mismos.\\
+
+\subsubsection{Plataforma de Aplicación (M2M Application Platform)}
+
+La plataforma de aplicación utiliza la información recopilada de los dispositivos para ofrecer diferentes servicios. A partir de los datos disponibles, se proveen diferentes API's para diversos fines.
+
+\subsubsection{Plataforma de Acceso (M2M Access Platform)}
+
+La plataforma de acceso provee el servicio de acceso a los demás servicios de la plataforma M2SP a través de aplicaciones o acceso Web. Para aplicaciones en dispositivos inteligentes, la plataforma ofrece la funcionalidad de manejo de aplicaciones que incluye la opción de registro para desarrolladores y mapeo de la aplicación hacia diferentes dispositivos.\\
+
+Adicional a todos estos componentes, la plataforma M2SP opera bajo la arquitectura REST para las interfaces de aplicaciones entre los dispositivos y todos los servicios de la plataforma.\\
+
+De acuerdo a la arquitectura, los autores de \cite{paper1} plantean una plataforma que abarca las principales características que las redes M2M requieren en la actualidad. Mas aún, es una arquitectura diseñada con la posibilidad de interconexión independiente del tipo de red o dispositivo.
 
 \section{Tecnologías y Estandarización}
 
