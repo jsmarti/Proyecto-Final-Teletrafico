@@ -596,7 +596,46 @@ Por último, se ilustran dos casos de estudio de este tipo de redes en donde el 
 % stfloats package.
 
 \section{Características de una red M2M y su Tráfico}
+Como se mencion\'o anteriormente, existen varias aplicaciones de las redes M2M y se pueden clasificar dentro de dos grandes categorias. La primera son las aplicaciones p\'ublicas como protecci\'on ambiental o sistemas de transporte inteligente (ITS). La segunda categoria son las aplicaciones no p\'ublicas en donde se encuentran redes de hogar, manejo de electrodom\'esticos y equipos y aplicaciones biomedicas. Los servicios que requieren estas redes pueden ser de localizaci\'on, mobilidad de los dispositivos o restricciones de eficiencia energ\'etica. De esta manera las redes M2M pueden estar compuestas de dispositivos simples y complejos, lo cual se debe tener en cuenta para el diseño.\\
+
+Los nodos de las redes M2M se clasifican en 3 grandes categorias las cuales son \emph{low-end}, \emph{mid-end} y \emph{high-end sensor nodes}. A continuaci\'on se muestran las car\'acteristicas de cada uno:
+\begin{itemize}
+\item \emph{Nodo sensor low-end}: son econo\'omicos y tiene poca funcionalidad. Son est\'aticos, simples y eficientes energ\'eticamente. Sus funciones son muy b\'asicas como por ejemplo, configuraci\'on autom\'atica, ahorro de energia y el tr\'afico puede ser agregado, por lo cual son aplicados principalmente al monitero del medio ambiente.\\
+
+\item \emph{Nodo sensor mid-end}: son un poco m\'as costosos que los anteriores y pueden tener cierta movilidad. Son un poco m\'as complejos y tienen un mayor consumo de energ\'ia ya que tienen funciones adicionales como localizaci\'on, calidad de servicio, control de tr\'afico y procesamiento. Estos pueden ser aplicados a las redes de hogar, electrodomesticos y automatizaci\'on industrial.\\
+
+\item \emph{Nodo sensor high-end}: son los m\'as costosos pero a su vez los que tienen una mayor complejidad, dada su movilidad y su versatilidad al poder realizar muchas m\'as funciones. En esta categor\'ia se encuentran los telefonos inteligentes y otras aplicaciones son los robots con movimiento, como por ejemplo en la industria militar.\\
+
+Con relaci\'on a al tr\'afico de estas redes, los dispositivos M2M generan una gran variedad de patrones de tr\'afico como por ejemplo periodico, transmisi\'on en vivo de multimedia o manejados por eventos. Todos estos patrones son generado por una gran cantidad de dispositivos con caracter\'isiticas diferentes, por lo cual se tiene una gran cantidad de informaci\'on que la hace dif\'icil de procesar.
+
+
+
+\end{itemize}
+
+
 \section{Plataformas M2M en la Actualidad}
+Debido a la gran variedad de dispositivos en estas redes y la diferencia en los estandares de los fabricantes, la unifiación de los servicios de las aplicaciones es dificil de manejar. De esta manera, se han hecho plataformas espec\'ificas para cada una de las aplicaciones, lo cual ha impedido el desarrollo de estas redes a gran escala. Surge entonces la necesidad de tener una plataforma abierta de serivicio para la estandarizaci\'on en todas las industrias.\\
+
+A partir de esto se define el ecosistema de una red M2M, que esta conformado por los fabricantes de dispositivos, los prestadores de servicios de Internet, desarrolladores de la plataforma, prestadores de otros servicios y usuarios. La plataforma debe ser entonces abierta para todos, de tal manera que todos los actores se puedan sincronizar.\\
+
+Las plataformas existentes en la actulidad se dividen en tres grandes categorias las cuales son: plataformas comerciales, plataformas de hardware y plataformas en desarrollo. A continuaci\'on se presentan las caracte\'isticas de cada una.
+
+\subsection{Plataforma Comercial M2M}
+El Comite T\'ecnico del Instituto Europeo de Estandares de Telecomunicaciones (ETSI)provee una arquitectura con un grupo gen\'erico de funcionalidades para sevicios M2M. La Capa de Capacidad de Servicios (SCL) tiene varias funciones que son compartidas por distintas aplicaciones, asi como los puntos de referencia entre dispositivos, los puertos y la red. Este es el est\'andar m\'as utilizado por las aplicaciones comerciales, que son en su mayor\'ia redes de sensores. Las caracter\'isticas de estas plataformas son las siguientes:
+\begin{itemize}
+\item Se utiliza la arquitectura REST o el protocolo de acceso simple de objeto SOAP para la interfaz del usuario y operan sobre el protocolo HTTP.
+\item Los dispositivos y usuarios deben registrarse
+\item Son de c\'odigo abierto, es decir, permite a los desarrolladores programarlas y hacer modificacione.
+\item Tienen procesamiento de los datos que son adquiridos
+\item Manejo de perfiles y de cuentas de usuario, asi como almacenamiento y SMS
+\item Soportan la conexi\'on de dispositivos moviles.
+
+\end{itemize}
+
+\subsection{Plataforma de hardware}
+Existen dos tipos de plataformas de hardware. Una esta relacionada con el hardware que se conecta a las plataformas comerciales mencionadas anteriormente y las otras son las plataformas de desarrollo como por ejemplo Arduino.
+\subsection{Plataformas en desarrollo}
+
 \section{Plataforma de Servicio M2M: M2SP}
 
 Una vez identificadas las características de las plataformas M2M en la actualidad, se vio anteriormente cómo una plataforma integrada de servicio para estas redes debe cumplir con ciertas características. Esta plataforma de servicio, denominada M2SP, reune las características requeridas mediante la arquitectura mostrada en la figura \ref{arqM2SP}, tomada de \cite{paper1} 
