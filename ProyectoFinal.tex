@@ -596,6 +596,7 @@ Por último, se ilustran dos casos de estudio de este tipo de redes en donde el 
 % stfloats package.
 
 \section{Características de una red M2M y su Tráfico}
+
 Como se mencion\'o anteriormente, existen varias aplicaciones de las redes M2M y se pueden clasificar dentro de dos grandes categorias. La primera son las aplicaciones p\'ublicas como protecci\'on ambiental o sistemas de transporte inteligente (ITS). La segunda categoria son las aplicaciones no p\'ublicas en donde se encuentran redes de hogar, manejo de electrodom\'esticos y equipos y aplicaciones biomedicas. Los servicios que requieren estas redes pueden ser de localizaci\'on, mobilidad de los dispositivos o restricciones de eficiencia energ\'etica. De esta manera las redes M2M pueden estar compuestas de dispositivos simples y complejos, lo cual se debe tener en cuenta para el diseño.\\
 
 Los nodos de las redes M2M se clasifican en 3 grandes categorias las cuales son \emph{low-end}, \emph{mid-end} y \emph{high-end sensor nodes}. A continuaci\'on se muestran las car\'acteristicas de cada uno:
@@ -609,11 +610,12 @@ Los nodos de las redes M2M se clasifican en 3 grandes categorias las cuales son 
 Con relaci\'on a al tr\'afico de estas redes, los dispositivos M2M generan una gran variedad de patrones de tr\'afico como por ejemplo periodico, transmisi\'on en vivo de multimedia o manejados por eventos. Todos estos patrones son generado por una gran cantidad de dispositivos con caracter\'isiticas diferentes, por lo cual se tiene una gran cantidad de informaci\'on que la hace dif\'icil de procesar.
 
 
-
 \end{itemize}
 
 
+
 \section{Plataformas M2M en la Actualidad}
+
 Debido a la gran variedad de dispositivos en estas redes y la diferencia en los estandares de los fabricantes, la unifiación de los servicios de las aplicaciones es dificil de manejar. De esta manera, se han hecho plataformas espec\'ificas para cada una de las aplicaciones, lo cual ha impedido el desarrollo de estas redes a gran escala. Surge entonces la necesidad de tener una plataforma abierta de serivicio para la estandarizaci\'on en todas las industrias.\\
 
 A partir de esto se define el ecosistema de una red M2M, que esta conformado por los fabricantes de dispositivos, los prestadores de servicios de Internet, desarrolladores de la plataforma, prestadores de otros servicios y usuarios. La plataforma debe ser entonces abierta para todos, de tal manera que todos los actores se puedan sincronizar.\\
@@ -625,7 +627,7 @@ El Comite T\'ecnico del Instituto Europeo de Estandares de Telecomunicaciones (E
 \begin{itemize}
 \item Se utiliza la arquitectura REST o el protocolo de acceso simple de objeto SOAP para la interfaz del usuario y operan sobre el protocolo HTTP.
 \item Los dispositivos y usuarios deben registrarse
-\item Son de c\'odigo abierto, es decir, permite a los desarrolladores programarlas y hacer modificacione.
+\item Son de c\'odigo abierto, es decir, permite a los desarrolladores programarlas y hacer modificaciones.
 \item Tienen procesamiento de los datos que son adquiridos
 \item Manejo de perfiles y de cuentas de usuario, asi como almacenamiento y SMS
 \item Soportan la conexi\'on de dispositivos moviles.
@@ -635,6 +637,7 @@ El Comite T\'ecnico del Instituto Europeo de Estandares de Telecomunicaciones (E
 \subsection{Plataforma de hardware}
 Existen dos tipos de plataformas de hardware. Una esta relacionada con el hardware que se conecta a las plataformas comerciales mencionadas anteriormente y las otras son las plataformas de desarrollo como por ejemplo Arduino.
 \subsection{Plataformas en desarrollo}
+
 
 \section{Plataforma de Servicio M2M: M2SP}
 
@@ -680,13 +683,27 @@ De acuerdo a la arquitectura, los autores de \cite{paper1} plantean una platafor
 
 La implementación de una plataforma de integración como la anteriormente expuesta requiere de ciertas características tecnológicas de los dispositivos para el éxito de la comunicación y operación de los servicios.\\
 
-Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Pee-to-Peer, y actividades de estandarización.
+Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Peer-to-Peer, y actividades de estandarización.
 
 \subsection{Identificación y direccionamiento}
 
 Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben poder garantizar unicidad, consistencia, persistencia y escalabilidad para todos los identificadores de los dispositivos.\\
 
-En la actualidad, el uso de protocolos como TCP/IP y los esquemas de direccionamiento MAC son válidos en algunas redes M2M pero no en todas. 
+En la actualidad, el uso de protocolos como TCP/IP y los esquemas de direccionamiento MAC son válidos en algunas redes M2M pero no en todas.
+
+\subsection{Protocolos de comunicación}
+
+Los protocolos de comunicación son de gran importancia ya que permiten la comunicación entre los actores de la red. Para el caso de las redes M2M es posible utilizar redes celulares o redes Ad-hoc.
+
+\subsection{Manejo de la red}
+
+La tecnología de la plataforma debe poder realizar mantenimiento de la red bajo factores como tolerancia a fallas, escalabilidad, costos, eficiencia energética, configuración dinámica, dependencia entre aplicaciones y control de tráfico.
+
+\subsection{Comunicación Peer-to-Peer}
+
+Dada la posibilidad de la plataforma de comunicar dispositivos entre sí, todos los nodos de la red deberán tener la capacidad de comunicarse bajo el principio Peer-to-Peer, lo cual libera considerablemente el tráfico en el sistema, en la medida en que sea posible.
+
+\subsection{Actividades de Estandarización}
 
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
 
@@ -900,6 +917,9 @@ Se observa que el tiempo de simulaci\'on para ambos modelos 3GPP no aumenta y es
 
 \section{Conclusiones}
 
+A partir del estudio realizado, se vio como las redes M2M son un tema de actualidad y de gran aplicación en las situaciones de la cotidianidad. A partir de los requisitos de una red M2M y de los casos de estudio, si justificó la importancia de la implementación de una plataforma de servicio que cumpla con las especificaciones globales de una red entre máquinas.\\
+
+Así mismo, la plataforma introduce ciertos requisitos tecnológicos en los dispositivos para que el sistema M2SP sea eficiente y brinde la calidad de servicio que las redes necesitan.
 
 
 % if have a single appendix:
