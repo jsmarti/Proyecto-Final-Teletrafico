@@ -596,6 +596,7 @@ Por último, se ilustran dos casos de estudio de este tipo de redes en donde el 
 % stfloats package.
 
 \section{Características de una red M2M y su Tráfico}
+
 Como se mencion\'o anteriormente, existen varias aplicaciones de las redes M2M y se pueden clasificar dentro de dos grandes categorias. La primera son las aplicaciones p\'ublicas como protecci\'on ambiental o sistemas de transporte inteligente (ITS). La segunda categoria son las aplicaciones no p\'ublicas en donde se encuentran redes de hogar, manejo de electrodom\'esticos y equipos y aplicaciones biomedicas. Los servicios que requieren estas redes pueden ser de localizaci\'on, mobilidad de los dispositivos o restricciones de eficiencia energ\'etica. De esta manera las redes M2M pueden estar compuestas de dispositivos simples y complejos, lo cual se debe tener en cuenta para el diseño.\\
 
 Los nodos de las redes M2M se clasifican en 3 grandes categorias las cuales son \emph{low-end}, \emph{mid-end} y \emph{high-end sensor nodes}. A continuaci\'on se muestran las car\'acteristicas de cada uno:
@@ -609,18 +610,32 @@ Los nodos de las redes M2M se clasifican en 3 grandes categorias las cuales son 
 Con relaci\'on a al tr\'afico de estas redes, los dispositivos M2M generan una gran variedad de patrones de tr\'afico como por ejemplo periodico, transmisi\'on en vivo de multimedia o manejados por eventos. Todos estos patrones son generado por una gran cantidad de dispositivos con caracter\'isiticas diferentes, por lo cual se tiene una gran cantidad de informaci\'on que la hace dif\'icil de procesar.
 
 
-
 \end{itemize}
 
 
+<<<<<<< HEAD
 \section{Plataformas M2M }
+=======
+
+\section{Plataformas M2M en la Actualidad}
+
+>>>>>>> origin/master
 Debido a la gran variedad de dispositivos en estas redes y la diferencia en los estandares de los fabricantes, la unifiación de los servicios de las aplicaciones es dificil de manejar. De esta manera, se han hecho plataformas espec\'ificas para cada una de las aplicaciones, lo cual ha impedido el desarrollo de estas redes a gran escala. Surge entonces la necesidad de tener una plataforma abierta de serivicio para la estandarizaci\'on en todas las industrias.\\
 
 A partir de esto se define el ecosistema de una red M2M, que esta conformado por los fabricantes de dispositivos, los prestadores de servicios de Internet, desarrolladores de la plataforma, prestadores de otros servicios y usuarios. La plataforma debe ser entonces abierta para todos, de tal manera que todos los actores se puedan sincronizar.\\
 
 Los requerimientos para una plataforma M2M son:
 \begin{itemize}
+<<<<<<< HEAD
 \item Manejo de perfiles de dispositivos: los dispositivos deben estar registrados en una plataforma para poder acceder a objetos o dispositivos conectados a Internet. La plataforma debe estar en la capacidad de buscar, modificar y controlar los dispositivos M2M registrados.
+=======
+\item Se utiliza la arquitectura REST o el protocolo de acceso simple de objeto SOAP para la interfaz del usuario y operan sobre el protocolo HTTP.
+\item Los dispositivos y usuarios deben registrarse
+\item Son de c\'odigo abierto, es decir, permite a los desarrolladores programarlas y hacer modificaciones.
+\item Tienen procesamiento de los datos que son adquiridos
+\item Manejo de perfiles y de cuentas de usuario, asi como almacenamiento y SMS
+\item Soportan la conexi\'on de dispositivos moviles.
+>>>>>>> origin/master
 
 \item Manejo de perfiles de usuario: se deben manejar las restricciones de acceso de los usuarios a los dispositivos y a los servicios. Tambi\'en debe soportar el registro y la modificaci\'on de perfiles, autentiaci\'on y acceso.
 \item Manejo de informaci\'on: se debe poder almacenar informaci\'on adquirida de los dispositivos. La plataforma tambi\'en debe reaccionar a los datos recolectados para generar acciones de control.
@@ -631,6 +646,7 @@ Los requerimientos para una plataforma M2M son:
 \item Manejo de conexiones: se debe poder manejar la conecci\'on de los dispositivos, cuando pueden ser vistos por m\'as de una red o metodos de comuniaci\'on.
 
 \end{itemize}
+
 
 \section{Plataforma de Servicio M2M: M2SP}
 
@@ -676,15 +692,160 @@ De acuerdo a la arquitectura, los autores de \cite{paper1} plantean una platafor
 
 La implementación de una plataforma de integración como la anteriormente expuesta requiere de ciertas características tecnológicas de los dispositivos para el éxito de la comunicación y operación de los servicios.\\
 
-Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Pee-to-Peer, y actividades de estandarización.
+Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Peer-to-Peer, y actividades de estandarización.
 
 \subsection{Identificación y direccionamiento}
 
+<<<<<<< HEAD
 Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben
 
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
 
 Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.
+=======
+Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben poder garantizar unicidad, consistencia, persistencia y escalabilidad para todos los identificadores de los dispositivos.\\
+
+En la actualidad, el uso de protocolos como TCP/IP y los esquemas de direccionamiento MAC son válidos en algunas redes M2M pero no en todas.
+
+\subsection{Protocolos de comunicación}
+
+Los protocolos de comunicación son de gran importancia ya que permiten la comunicación entre los actores de la red. Para el caso de las redes M2M es posible utilizar redes celulares o redes Ad-hoc.
+
+\subsection{Manejo de la red}
+
+La tecnología de la plataforma debe poder realizar mantenimiento de la red bajo factores como tolerancia a fallas, escalabilidad, costos, eficiencia energética, configuración dinámica, dependencia entre aplicaciones y control de tráfico.
+
+\subsection{Comunicación Peer-to-Peer}
+
+Dada la posibilidad de la plataforma de comunicar dispositivos entre sí, todos los nodos de la red deberán tener la capacidad de comunicarse bajo el principio Peer-to-Peer, lo cual libera considerablemente el tráfico en el sistema, en la medida en que sea posible.
+
+\subsection{Actividades de Estandarización}
+
+\section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
+
+Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.\\
+
+Una aplicación de redes M2M en donde el ahorro energético es de gran importancia son las redes celulares LTE que implementan un esquema de recepción discontinua (DRX). En estos sistemas, equipos móviles como teléfonos celulares recibe mensajes durante un cierto periodo y entran en un modo de ahorro de energía durante otro periodo de tiempo. Este esquema es implementado gracias al comportamiento discontinuo del tráfico de la red M2M compuesta por estos dispositivos.\\
+
+Gracias al comportamiento de la red, existe una poca cantidad de datos por paquete transmitido y largos intervalos entre transmisiones. Gracias a esto, al implementar el esquema DRX es más probable estar en un estado de ahorro de energía.\\
+
+Como se explica en \cite{paper2}, el equipo de usuario (UE) que implementa el esquema de recepción discontínua tiene un diagrama de tiempos como el que se muestra en la figura \ref{tiemposDRX}. 
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.42]{drx.png}}
+\caption{Diagrama de tiempos DRX}
+\label{tiemposDRX}
+\end{figure}
+
+En el diagrama, el equipo recibe datos en el estado RRC activo. Si no existe transmisión en un cierto periodo de tiempo determinado por un contador de tiempo, el dispositivo entra en un estado de liberación de conexión para posteriormente entrar al estado \textit{idle} en donde se realiza un ahorro de energía.\\
+
+\subsection{El esquema DRX}
+
+En el estado DRX \textit{idle},cada ciclo contiene una ventana de tiempo dentro de las cuales puede existir una o más PO's, que definen ocaciones de recepción de un mensaje. En el esquema DRX, la mayoría del equipo se encuentra apagado ya que solo es necesario monitorear un PO por ciclo DRX.\\
+
+En la conexión a la red, se especifica el tiempo de duración de cada PO ($T_{P}$) y el ancho del ciclo DRX, denominado PF se puede obtener mediante:\\
+
+\begin{equation}
+PF*NmodT_{P}=(T_{P}/N)\times(I_{UE}modN)
+\end{equation}
+\begin{equation}
+N=min(T_{P},nB)
+\end{equation}
+\begin{equation}
+nB = T_{P}/2^i, i\in \lbrace-5,-4,-3,-2,-1,0,1,2\rbrace
+\end{equation}
+
+Donde $I_{UE}$ se obtiene tomando el identificador IMSI módulo 1024.\\
+
+Los índices $i$ que apuntan a la posición de PO en el ciclo DRX se pueden derivar de:\\
+
+\begin{equation}
+i = floor(I_{UE}/N)modN_{s}
+\end{equation}
+
+\begin{equation}
+N_{s} = max(1,nB/T_{P})
+\end{equation}
+
+\subsection{Modelamiento del sistema}
+
+Dado que el tráfico en la red M2M para dispositivos LTE se caracteriza por pequeñas cantidades de datos y largos intervalos entre transmisiones, es posible modelar el número de paquetes que llegan al receptor en un intervalo de tiempo dado como un proceso de Poisson con parámetro $\lambda$.\\
+
+Con esto en mente, el comportamiento del equipo bajo el esquema DRX de la figura \ref{tiemposDRX} se puede describir como un proceso markoviano con el diagrama de estados presentado en la figura \ref{estadosDRX}.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.5]{estados.png}}
+\caption{Diagrama de transición de estados para el sistema DRX}
+\label{estadosDRX}
+\end{figure}
+
+En el diagrama, se definen los estados:\\
+
+\begin{itemize}
+	\item $S_{1}$: Periodo activo de DRX antes de que el contador expire.
+	\item $S_{2}$: Ocasión en la que ocurre PO y el equipo despierta para recibir un mensaje.
+	\item $S_{3}$: Un ciclo DRX donde el dispositivo está apagado.
+	\item $S_{4}$: configuración de la conexión RRC para reingresar a la red.
+	\item $S_{5}$: Liberación de la conexión RRC despues de la expiración del contador.
+\end{itemize}
+
+De acuerdo a \cite{paper2}, dado el tiempo $T_{P}$ y el tiempo de contador $T_{R}$, el comportamiento de la red permite determinar estas probabilidades como:\\
+
+\begin{equation}
+P_{11}=1-e^{1-\lambda T_{R}}, P_{15}=e^{-\lambda T_{R}}
+\end{equation}
+\begin{equation}
+P_{24}=1-e^{1-\lambda T_{P}}, P_{23}=e^{-\lambda T_{P}}
+\end{equation}
+\begin{equation}
+P_{53}=P_{41}=P_{32}=1
+\end{equation}
+
+En este punto, la solución de las probabilidades de estado se puede realizar mediante la solución de la matríz de estados de transición, a partir de las ecuaciones de balance y normalización del sistema. Todo esto se puede encontrar con más detalle en \cite{paper2}.
+
+\subsection{Desempeño del Modelo}
+
+Para evaluar el desempeño del sistema, es posible tomar en consideracion tres factores: el factor de ahorro de energía, el retardo de acceso y el factor efectivo.\\
+
+El factor de ahorro de energía se define como el porcentaje de tiempo en el cual es dispositivo está apagado, en relación a todo el ciclo de operación. Este factor es calculado mediante las probabilidades de estado y el tiempo medio que el sistema dura en cada estado. Especificamente, se analiza el estado $S_{3}$, donde el dispositivo entra en un ahorro de energía.\\
+
+La figura \ref{ps} muestra el comportamiento de este parámetro bajo diferentes criterios.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.35]{ps.png}}
+\caption{Factor de ahorro de energía}
+\label{ps}
+\end{figure}
+
+Como se puede ver, el factor decrece si el tiempo del contador se incrementa o si el tiempo de paginación ($T_{P}$) decrece. Además, se puede ver que entre más rápido lleguen los paquetes, el ahorro es menor, pues el dispositivo tiene menos tiempo para estar en reposo.\\
+
+El retardo de acceso tiene un comportamiento como se presenta en la figura \ref{acceso}.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.35]{acceso.png}}
+\caption{Retardo de acceso}
+\label{acceso}
+\end{figure}
+
+Aquí, se puede ver que el comportamiento es similar al factor de ahorro de energía, una diferencia es que el tiempo del contador ($T_{R}$) tiene un mayor efecto en el retardo que en el ahorro de energía.\\
+
+Por último, el factor efectivo define la utilización real de la potencia consumida, el cual se comporta como en la figura \ref{efectivo}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.35]{efectivo.png}}
+\caption{Factor efectivo}
+\label{efectivo}
+\end{figure}
+
+Como se puede observar, el factor disminuye a medida que la tasa de llegada de paquetes disminuye, esto se debe a que una vez se procesa un paquete, el equipo entrará al estado \textit{idle} puesto que se espera que el siguiente paquete tarde una cantidad considerable de tiempo; todo gracias al comportamiento de la red M2M.\\
+
+Con todo lo anterior, se vio como las características de una red M2M en especial se pueden modelar como una cadena de Markov. Además, el caso de estudio evidencia cómo una plataforma M2SP debe proveer los servicios necesarios para el correcto procesamiento de los datos de poca longitud y largos periodos de silencio.
+>>>>>>> origin/master
 
 \section{Caso de estudio: Modelamiento de Fuentes de tráfico}
 El modelamiento de las fuentes de tráfico es muy importante para dimensionar los requerimientos de la red. Para el caso de las redes M2M, es necesario obtener modelos definidos adecuamente para asi poder conocer los requerimientos a futuro. debido a que se prevé un gran aumento en el número de dispositivos conectados.\\
@@ -772,6 +933,9 @@ Se observa que el tiempo de simulaci\'on para ambos modelos 3GPP no aumenta y es
 
 \section{Conclusiones}
 
+A partir del estudio realizado, se vio como las redes M2M son un tema de actualidad y de gran aplicación en las situaciones de la cotidianidad. A partir de los requisitos de una red M2M y de los casos de estudio, si justificó la importancia de la implementación de una plataforma de servicio que cumpla con las especificaciones globales de una red entre máquinas.\\
+
+Así mismo, la plataforma introduce ciertos requisitos tecnológicos en los dispositivos para que el sistema M2SP sea eficiente y brinde la calidad de servicio que las redes necesitan.
 
 
 % if have a single appendix:
@@ -840,6 +1004,13 @@ The authors would like to thank...
 
 \bibitem{paper1}
 J. ~Kim, J. ~Lee, J. ~Kim and J. ~Yun. ~"M2M Service Platforms: Survey, Issues, and Enabling Technologies", \emph{IEEE Communications Surveys and Tutorials}, Vol. 16, pp. 61-76, 2014.
+<<<<<<< HEAD
+=======
+
+\bibitem{paper2}
+J. ~Wu, T. ~Zhang, Z. ~Zeng and H. ~Chen. ~"Study on Discontinuous Reception Modeling for M2M Traffic in LTE-A Networks", \emph{Communication Technology (ICCT), Communication Technology (ICCT)}, pp. 584-588, 2013.
+
+>>>>>>> origin/master
 \bibitem{art3}
 M. ~Laner, P. ~Svoboda, N. ~Nikaein and M. ~Rupp. ~'Traffic Models for Machine Type Communications', \emph{Wireless Communication Systems (ISWCS 2013), Proceedings of the Tenth International Symposium on}, pp. 1-5, 2013.
   
