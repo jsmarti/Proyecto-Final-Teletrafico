@@ -645,13 +645,112 @@ Este conjunto de características incluyen la identificación y direccionamiento
 
 \subsection{Identificación y direccionamiento}
 
-Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben
+Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben poder garantizar unicidad, consistencia, persistencia y escalabilidad para todos los identificadores de los dispositivos.\\
+
+En la actualidad, el uso de protocolos como TCP/IP y los esquemas de direccionamiento MAC son válidos en algunas redes M2M pero no en todas. 
 
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
 
-Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.
+Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.\\
+
+Una aplicación de redes M2M en donde el ahorro energético es de gran importancia son las redes celulares LTE que implementan un esquema de recepción discontinua (DRX). En estos sistemas, equipos móviles como teléfonos celulares recibe mensajes durante un cierto periodo y entran en un modo de ahorro de energía durante otro periodo de tiempo. Este esquema es implementado gracias al comportamiento discontinuo del tráfico de la red M2M compuesta por estos dispositivos.\\
+
+Gracias al comportamiento de la red, existe una poca cantidad de datos por paquete transmitido y largos intervalos entre transmisiones. Gracias a esto, al implementar el esquema DRX es más probable estar en un estado de ahorro de energía.\\
+
+Como se explica en \cite{paper2}, el equipo de usuario (UE) que implementa el esquema de recepción discontínua tiene un diagrama de tiempos como el que se muestra en la figura \ref{tiemposDRX}. 
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.42]{drx.png}}
+\caption{Diagrama de tiempos DRX}
+\label{tiemposDRX}
+\end{figure}
+
+En el diagrama, el equipo recibe datos en el estado RRC activo. Si no existe transmisión en un cierto periodo de tiempo determinado por un contador de tiempo, el dispositivo entra en un estado de liberación de conexión para posteriormente entrar al estado \textit{idle} en donde se realiza un ahorro de energía.\\
+
+\subsection{El esquema DRX}
+
+En el estado DRX \textit{idle},cada ciclo contiene una ventana de tiempo dentro de las cuales puede existir una o más PO's, que definen ocaciones de recepción de un mensaje. En el esquema DRX, la mayoría del equipo se encuentra apagado ya que solo es necesario monitorear un PO por ciclo DRX.\\
+
+En la conexión a la red, se especifica el tiempo de duración de cada PO ($T_{P}$) y el ancho del ciclo DRX, denominado PF se puede obtener mediante:\\
+
+\begin{equation}
+PF*NmodT_{P}=(T_{P}/N)\times(I_{UE}modN)
+\end{equation}
+\begin{equation}
+N=min(T_{P},nB)
+\end{equation}
+\begin{equation}
+nB = T_{P}/2^i, i\in \lbrace-5,-4,-3,-2,-1,0,1,2\rbrace
+\end{equation}
+
+Donde $I_{UE}$ se obtiene tomando el identificador IMSI módulo 1024.\\
+
+Los índices $i$ que apuntan a la posición de PO en el ciclo DRX se pueden derivar de:\\
+
+\begin{equation}
+i = floor(I_{UE}/N)modN_{s}
+\end{equation}
+
+\begin{equation}
+N_{s} = max(1,nB/T_{P})
+\end{equation}
+
+\subsection{Modelamiento del sistema}
+
+Dado que el tráfico en la red M2M para dispositivos LTE se caracteriza por pequeñas cantidades de datos y largos intervalos entre transmisiones, es posible modelar el número de paquetes que llegan al receptor en un intervalo de tiempo dado como un proceso de Poisson con parámetro $\lambda$.\\
+
+Con esto en mente, el comportamiento del equipo bajo el esquema DRX de la figura \ref{tiemposDRX} se puede describir como un proceso markoviano con el diagrama de estados presentado en la figura \ref{estadosDRX}.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.5]{estados.png}}
+\caption{Diagrama de transición de estados para el sistema DRX}
+\label{estadosDRX}
+\end{figure}
+
+En el diagrama, se definen los estados:\\
+
+\begin{itemize}
+	\item $S_{1}$: Periodo activo de DRX antes de que el contador expire.
+	\item $S_{2}$: Ocasión en la que ocurre PO y el equipo despierta para recibir un mensaje.
+	\item $S_{3}$: Un ciclo DRX donde el dispositivo está apagado.
+	\item $S_{4}$: configuración de la conexión RRC para reingresar a la red.
+	\item $S_{5}$: Liberación de la conexión RRC despues de la expiración del contador.
+\end{itemize}
+
+De acuerdo a \cite{paper2}, dado el tiempo $T_{P}$ y el tiempo de contador $T_{R}$, el comportamiento de la red permite determinar estas probabilidades como:\\
+
+\begin{equation}
+P_{11}=1-e^{1-\lambda T_{R}}, P_{15}=e^{-\lambda T_{R}}
+\end{equation}
+\begin{equation}
+P_{24}=1-e^{1-\lambda T_{P}}, P_{23}=e^{-\lambda T_{P}}
+\end{equation}
+\begin{equation}
+P_{53}=P_{41}=P_{32}=1
+\end{equation}
+
+En este punto, la solución de las probabilidades de estado se puede realizar mediante la solución de la matríz de estados de transición, a partir de las ecuaciones de balance y normalización del sistema. Todo esto se puede encontrar con más detalle en \cite{paper2}.
+
+\subsection{Desempeño del Modelo}
+
+Para evaluar el desempeño del sistema, es posible tomar en consideracion tres factores: el factor de ahorro de energía, el retardo de acceso y el factor efectivo.\\
+
+El factor de ahorro de energía se define como el porcentaje de tiempo en el cual es dispositivo está apagado, en relación a todo el ciclo de operación. Este factor es calculado mediante las probabilidades de estado y el tiempo medio que el sistema dura en cada estado. Especificamente, se analiza el estado $S_{3}$, donde el dispositivo entra en un ahorro de energía.\\
+
+La figura \ref{ps} muestra el comportamiento de este parámetro bajo diferentes criterios.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=0.4]{ps.png}}
+\caption{Factor de ahorro de energía}
+\label{ps}
+\end{figure}
+
 
 \section{Caso de estudio: Modelamiento de Fuentes de tráfico}
+
 El modelamiento de las fuentes de tráfico es muy importante para dimensionar los requerimientos de la red. Para el caso de las redes M2M, es necesario obtener modelos definidos adecuamente para asi poder conocer los requerimientos a futuro. debido a que se prevé un gran aumento en el número de dispositivos conectados.\\
 
 Para realizar este tipo de modelos existen dos metodologías diferentes. La primera de ellas consiste en modelar simultaneamente el tráfico generado por un gran número de maquinas autónomas por separado. La segunda metodología es la del tráfico agregado, en la cual se acumula el tráfico de todos los dispositivos en un solo flujo.\\
@@ -805,6 +904,10 @@ The authors would like to thank...
 
 \bibitem{paper1}
 J. ~Kim, J. ~Lee, J. ~Kim and J. ~Yun. ~"M2M Service Platforms: Survey, Issues, and Enabling Technologies", \emph{IEEE Communications Surveys and Tutorials}, Vol. 16, pp. 61-76, 2014.
+
+\bibitem{paper2}
+J. ~Wu, T. ~Zhang, Z. ~Zeng and H. ~Chen. ~"Study on Discontinuous Reception Modeling for M2M Traffic in LTE-A Networks"
+
 \bibitem{art3}
 M. ~Laner, P. ~Svoboda, N. ~Nikaein and M. ~Rupp. ~'Traffic Models for Machine Type Communications', \emph{Wireless Communication Systems (ISWCS 2013), Proceedings of the Tenth International Symposium on}, pp. 1-5, 2013.
   
