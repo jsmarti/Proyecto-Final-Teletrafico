@@ -613,33 +613,30 @@ Con relaci\'on a al tr\'afico de estas redes, los dispositivos M2M generan una g
 \end{itemize}
 
 
-<<<<<<< HEAD
-\section{Plataformas M2M }
-=======
 
 \section{Plataformas M2M en la Actualidad}
 
->>>>>>> origin/master
+
 Debido a la gran variedad de dispositivos en estas redes y la diferencia en los estandares de los fabricantes, la unifiación de los servicios de las aplicaciones es dificil de manejar. De esta manera, se han hecho plataformas espec\'ificas para cada una de las aplicaciones, lo cual ha impedido el desarrollo de estas redes a gran escala. Surge entonces la necesidad de tener una plataforma abierta de serivicio para la estandarizaci\'on en todas las industrias.\\
 
 A partir de esto se define el ecosistema de una red M2M, que esta conformado por los fabricantes de dispositivos, los prestadores de servicios de Internet, desarrolladores de la plataforma, prestadores de otros servicios y usuarios. La plataforma debe ser entonces abierta para todos, de tal manera que todos los actores se puedan sincronizar.\\
 
 Los requerimientos para una plataforma M2M son:
 \begin{itemize}
-<<<<<<< HEAD
+
 \item Manejo de perfiles de dispositivos: los dispositivos deben estar registrados en una plataforma para poder acceder a objetos o dispositivos conectados a Internet. La plataforma debe estar en la capacidad de buscar, modificar y controlar los dispositivos M2M registrados.
-=======
+
 \item Se utiliza la arquitectura REST o el protocolo de acceso simple de objeto SOAP para la interfaz del usuario y operan sobre el protocolo HTTP.
 \item Los dispositivos y usuarios deben registrarse
 \item Son de c\'odigo abierto, es decir, permite a los desarrolladores programarlas y hacer modificaciones.
 \item Tienen procesamiento de los datos que son adquiridos
 \item Manejo de perfiles y de cuentas de usuario, asi como almacenamiento y SMS
 \item Soportan la conexi\'on de dispositivos moviles.
->>>>>>> origin/master
+
 
 \item Manejo de perfiles de usuario: se deben manejar las restricciones de acceso de los usuarios a los dispositivos y a los servicios. Tambi\'en debe soportar el registro y la modificaci\'on de perfiles, autentiaci\'on y acceso.
 \item Manejo de informaci\'on: se debe poder almacenar informaci\'on adquirida de los dispositivos. La plataforma tambi\'en debe reaccionar a los datos recolectados para generar acciones de control.
-\item Acceso a aplicaciones y a la web: se debe poder acceder a los servicios de un dispositivo M2M  a trav\'es de la red o trav\'es de una aplicaci\'on.
+\item Acceso desde aplicaciones y la web: se debe poder acceder a los servicios de un dispositivo M2M  a trav\'es de la red o trav\'es de una aplicaci\'on.
 \item Servicios de la numbre: se debe almacenar informaci\'on de tal manera que se pueda acceder en cualquier momento desde Internet.
 \item Comuniaci\'on Puerto a Puerto (P2P): debe soportar comuniaci\'on directa a trav\'es de internet sin tener que pasar por la plataforma entre dispositivos o usuarios.
 \item Manejo de la red: se debe garantizar el manejo de la funcionalidad de la red en conjunto, no soloel manejo individual de cada dispositivo.
@@ -688,21 +685,17 @@ Adicional a todos estos componentes, la plataforma M2SP opera bajo la arquitectu
 
 De acuerdo a la arquitectura, los autores de \cite{paper1} plantean una plataforma que abarca las principales características que las redes M2M requieren en la actualidad. Mas aún, es una arquitectura diseñada con la posibilidad de interconexión independiente del tipo de red o dispositivo.
 
-\section{Tecnologías y Estandarización}
+\section{Tecnologías}
 
 La implementación de una plataforma de integración como la anteriormente expuesta requiere de ciertas características tecnológicas de los dispositivos para el éxito de la comunicación y operación de los servicios.\\
 
-Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red, comunicación Peer-to-Peer, y actividades de estandarización.
+Este conjunto de características incluyen la identificación y direccionamiento de dispositivos, protocolos de comunicación, manejo de la red y comunicación Peer-to-Peer.
 
 \subsection{Identificación y direccionamiento}
 
-<<<<<<< HEAD
+
 Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben
 
-\section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
-
-Una característica muy importante de las redes M2M es la eficiencia energética. Esto debido a que la gran mayoría de máquinas que componen las redes son operadas por baterías.
-=======
 Dado que la plataforma exige el acceso a los dispositivos por parte de los usuarios, cada uno de ellos debe tener una identificación y dirección única. Para esto, las tecnologías de identificación deben poder garantizar unicidad, consistencia, persistencia y escalabilidad para todos los identificadores de los dispositivos.\\
 
 En la actualidad, el uso de protocolos como TCP/IP y los esquemas de direccionamiento MAC son válidos en algunas redes M2M pero no en todas.
@@ -718,7 +711,6 @@ La tecnología de la plataforma debe poder realizar mantenimiento de la red bajo
 \subsection{Comunicación Peer-to-Peer}
 
 Dada la posibilidad de la plataforma de comunicar dispositivos entre sí, todos los nodos de la red deberán tener la capacidad de comunicarse bajo el principio Peer-to-Peer, lo cual libera considerablemente el tráfico en el sistema, en la medida en que sea posible.
-
 
 \section{Caso de estudio: Modelamiento de Redes de Recepción Discontinua (DRX)}
 
